@@ -51,12 +51,105 @@ namespace csharp_typesystem_snacks
     {
         static void Main(string[] args)
         {
-            //per ogni posizione dell'array stampo il valore corrispondente
+         
+            //------------Primo snack--------------------
+            Console.WriteLine("\nPrimo snack:");
             Console.WriteLine("\nInserire primo numero:");
             int number1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("\nInserire secondo numero:");
             int number2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"\nIl primo numero sarà: {number1} e il secondo numero sarà: {number2}");
+
+            //condizione di verifica
+            if(number1 > number2)
+            Console.WriteLine($"\nIl numero più grande sarà: {number1} ");
+            else if (number1 == number2)
+            Console.WriteLine($"\nI due numeri sono uguali ");
+            else
+            Console.WriteLine($"\nIl numero più grande sarà: {number2} ");
+
+
+            //--------Secondo snack------------------
+            Console.WriteLine("\nSecondo snack:");
+            Console.WriteLine("\nInserire prima parola:");
+            string word1 = Console.ReadLine();
+            Console.WriteLine("\nInserire seconda parola:");
+            string word2 = Console.ReadLine();
+
+            //condizione di verifica
+
+            if (word1.Length < word2.Length)
+                Console.WriteLine($"\nLa parola più corta sarà: {word1} e quella più lunga sarà: {word2}");
+
+            else if(word1.Length == word2.Length)
+                Console.WriteLine($"\nLe due parole hanno la stessa lunghezza ");
+
+            else 
+                Console.WriteLine($"\nLa parola più corta sarà: {word2} e quella più lunga sarà: {word1}");
+
+
+            //--------Terzo snack------------------
+            int somma=0;
+
+            //Avvio il ciclo 10 volte
+            for (int i=0; i<10;i++)
+            {
+                Console.WriteLine("\nInserire un numero:");
+
+                int numberUser = Convert.ToInt32(Console.ReadLine());
+
+                somma = somma + numberUser;
+
+                Console.WriteLine($"\nLa somma è: {somma} ");
+
+            }
+
+            Console.WriteLine($"\nLa somma Totale sarà: {somma} ");
+
+
+            //--------Quarto snack------------------
+            somma = 0;
+            int media = 0, numTot=0;
+            for (int i = 2; i <= 10; i++)
+            {
+                somma += i; //sommo i valori
+
+                numTot++; //incremento la variabile per tenere traccia del numero di elementi effettivi 
+            }
+
+            media = somma / numTot;
+
+            Console.WriteLine($"\nLa somma Totale sarà: {somma} ");
+            Console.WriteLine($"\nLa media sarà: {media} ");
+            
+            //--------Quinto snack------------------
+
+            // Inserisco un numero
+            Console.WriteLine("\nInserire un numero:");
+            int numberUser = Convert.ToInt32(Console.ReadLine());
+
+            if (numberUser % 2 == 0)
+            {
+                Console.WriteLine($"\nIl numero è: {numberUser} ed è pari ");
+            }
+            else
+                Console.WriteLine($"Il numero inserito è dispari, il successivo è :{numberUser + 1}");
+
+            //--------Sesto snack------------------
+            string[] Invitati = { "pippo", "pluto", "paperino" };
+
+            Console.WriteLine("\nInserire il tuo nome:");
+            string nameUser = Console.ReadLine();
+
+            //ciclo su tutto il mio array
+            foreach (string invitatoNome in Invitati)
+            {
+                if (nameUser == invitatoNome)
+                {
+                    Console.WriteLine("\nSei dei nostri, la bamba è di la :)");
+                }
+            }
+
+            //--------Settimo snack------------------
 
             Console.ReadKey();
         }
