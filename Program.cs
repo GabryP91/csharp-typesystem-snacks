@@ -114,6 +114,7 @@ namespace csharp_typesystem_snacks
                 case 4:
                         //--------Quarto snack------------------
                         Console.WriteLine("\nQuarto snack: Calcola la somma e la media dei numeri da 2 a 10.");
+
                         somma = 0;
                         int media = 0, numTot = 0;
                         for (int i = 2; i <= 10; i++)
@@ -150,7 +151,7 @@ namespace csharp_typesystem_snacks
                         //--------Sesto snack------------------
                         Console.WriteLine("\nSesto snack: In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby. Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.");
                         string[] Invitati = { "pippo", "pluto", "paperino" };
-
+                        bool trovato = false;
                         Console.WriteLine("\nInserire il tuo nome:");
                         string nameUser = Console.ReadLine();
 
@@ -159,9 +160,12 @@ namespace csharp_typesystem_snacks
                         {
                             if (nameUser == invitatoNome)
                             {
-                                Console.WriteLine("\nSei dei nostri, la bamba è di la :)");
+                                trovato = true;
                             }
                         }
+                        if(trovato == true) Console.WriteLine("\nSei dei nostri, la bamba è di la :)");
+
+                        else Console.WriteLine("\nNon sei nella lista :(");
 
                     break;
 
